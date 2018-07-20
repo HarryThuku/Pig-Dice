@@ -1,3 +1,3 @@
-$().ready(function(){
-    alert("tsup")
-})
+// $().ready(function(){
+//     alert("tsup")
+// })
