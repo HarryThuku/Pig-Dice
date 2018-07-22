@@ -1,50 +1,25 @@
 body{
-    padding: 3%;
-    margin: 2%;
+    background-color: rgb(120, 201, 255);
+    padding: 5% 2%;
+    margin: 20px;
 }
 
-
-
-.play{
-    color: #00aced;
-}
-
-.icon{
-    border: none;
-    position: relative;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    border-radius: 5px;
-    /* box-shadow: 0 1px 2px rgba(0, 0, 0, .2) , -1px 0 2px rgba(0, 0, 0, .2); */
+.player{
+    background-color: rgb(97, 95, 95);
+    opacity: .7;
     overflow: hidden;
+    border-color: aquamarine;
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
 }
 
-.icon .fa{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(1) rotatey(0deg) rotateX(0deg);
-    transition: all .3s ease-in-out;
+.squad{
+    text-align: center;
 }
 
-.icon:hover .fa{
-    transform: translate(-50%,-50%) scale(1.4) rotatey(360deg) rotateX(360deg);
-    color: #fff;
-}
-
-.play:before{
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: -100%;
-    transition: all .5s ease-in-out;
-}
-.play:hover:before{
-    left: 0;
-}
-.play:hover:before{
-    background: #00aff0;
+.squad img{
+    width: 200px;
+    height: auto;
+    cursor: pointer;
 }
