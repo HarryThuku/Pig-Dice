@@ -5,7 +5,8 @@
 
 var playerOneRolls=0;
 var playerTwoRolls=0;
-
+var player1Name;
+var player2Name;
 
 $().ready(function(){
 
@@ -37,12 +38,37 @@ $().ready(function(){
     $("#l5").click(function(event){
         event.preventDefault();
         $("#storyP4").hide(300);
-        $("#gconsole").show(700);
+        $("#a1").show(700);
     })
 
+    $("#l6").click(function(event){
+        event.preventDefault();
+        player1Name=$("#p1Alias").val();
+        if(player1Name.length<=3){
+            alert("Please make sure that the player name has atleast 4 characters.");
+            $("#p1Alias").val("");
+        }
+        else{
+            $("#a1").hide(300);
+            $("#a2").show(700);
+            $("#P1A").text(player1Name);
+        }
+    })
 
-
-
+    $("#l7").click(function(event){
+        event.preventDefault();
+        player2Name=$("#p2Alias").val();
+        if(player2Name.length<=3){
+            alert("Please make sure that the player name has atleast 4 characters.");
+            $("#p2Alias").val("");
+        }
+        else{
+            $("#a2").hide(300);
+            $("#gconsole").show(700);
+            $("#P2A").text(player2Name);
+        }
+    })
+    
     $("#btnP1Roll").click(function(event){
         event.preventDefault();
         $("#btnP2Roll").hide(200);

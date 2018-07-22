@@ -59,6 +59,43 @@ body{
     grid-template-columns: repeat(2, 1fr);
 }
 
+.next{
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    backface-visibility: hidden;
+}
+.next:hover{
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    filter: opacity(.5);
+    border-radius: 5px;
+    background-color: brown;
+    color: aliceblue;
+}
+
+
+#storyL1{
+    background-image: url("../images/startup.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 8%;
+}
+#storyL1-1{
+    text-align: center;
+    background-color: black;
+    opacity: .4;
+    line-height: 1.5;
+    color: aliceblue;
+    padding: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+
 #storyP1{
     background-image: url("../images/drydocks.jpg");
     background-size: cover;
@@ -75,6 +112,102 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
 }
+
+#storyP2{
+    background-image: url("../images/takingPositions.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 6%;
+}
+#storyP2-2{
+    text-align: center;
+    background-color: black;
+    opacity: .4;
+    line-height: 1.5;
+    color: aliceblue;
+    padding: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+#storyP3{
+    background-image: url("../images/americanFlag.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 6%;
+}
+#storyP3-3{
+    text-align: center;
+    background-color: black;
+    opacity: .4;
+    line-height: 1.5;
+    color: aliceblue;
+    padding: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+#storyP4{
+    background-image: url("../images/smoky.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 6%;
+}
+#storyP4-4{
+    text-align: center;
+    background-color: black;
+    opacity: .5;
+    line-height: 1.5;
+    color: aliceblue;
+    padding: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.logo{
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+}
+
+.input{
+    border: none;
+    opacity: .5;
+    size: 18px;
+    padding: 10px;
+}
+.input:hover{
+    border: none;
+    opacity: .6;
+    size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.Data{
+    text-align: center;
+    background-color: black;
+    opacity: .8;
+    line-height: 1.5;
+    color: aliceblue;
+    padding: 3%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 3%;
+}
+
+.ally{
+    background-image: url("../images/army.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 5%;
+}
+
+#a1,
+#a2{
+    display: none;
+}
+
 
 
 
