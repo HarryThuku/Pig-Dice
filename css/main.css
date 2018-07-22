@@ -1,10 +1,22 @@
 body{
-    background-color: rgb(120, 201, 255);
+    background-color: silver;
     padding: 5% 2%;
     margin: 20px;
 }
 
-.player{
+#player1{
+    background-color: slategray;
+    opacity: .7;
+    overflow: hidden;
+    border-color: aquamarine;
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+    color: brown;
+    margin: 25px;
+}
+
+#player2{
     background-color: rgb(97, 95, 95);
     opacity: .7;
     overflow: hidden;
@@ -12,6 +24,8 @@ body{
     border-radius: 5px;
     text-align: center;
     padding: 15px;
+    color: yellowgreen;
+    margin: 25px;
 }
 
 .squad{
@@ -22,4 +36,23 @@ body{
     width: 200px;
     height: auto;
     cursor: pointer;
+}
+
+#gamingUnit{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: black;
+    color: rgb(161, 149, 149);
+    text-align: center;
+}
+
+
+#statsDiv{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.loger{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }

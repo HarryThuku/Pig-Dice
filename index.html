@@ -9,23 +9,88 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
 <body>
-    <section>
+    <section id="gamingUnit">
         <form>
             <section id="player1" class="player">
-            <div id="team1" class="squad">
-                <h1>sas</h1>
-            </div>           
-            <div id="alias1" class="alias1">
-                <p>harry</p>
-            </div>
-            <div id="diceValP1" class="diceValue">
-            </div>
-            <div id="btn" class="btnContainer">
-                <button id="btnP1Roll" class="btnRoll">play</button>
-                <button id="btnP1Hold" class="btnHold">hold</button>
-            </div>
-        </section>
+                <div id="team1" class="squad">
+                    <h1>sas</h1>
+                </div>           
+                <div id="alias1" class="alias1">
+                    <p>harry</p>
+                </div>
+                <div id="diceValP1" class="diceValue">
+                </div>
+                <div id="btn" class="btnContainer">
+                    <button id="btnP1Roll" class="btnRoll">play</button>
+                    <button id="btnP1Hold" class="btnHold">hold</button>
+                </div>
+            </section>
         </form>
+
+
+
+        <section id="versusDef">
+            <h1>VERSUS</h1>
+            <div id="gameLog">
+                <h3>Game <strong>log</strong></h3>
+                <p id="comnConsole"></p>
+            </div>
+            <div id="gameStats">
+                <h3>STATS</h3>
+                <div id="statsDiv">
+                    <div id="p1Stats">
+                        <h2>p1</h2>
+                        <div class="loger">
+                            <div class="rolled">
+                                <h3>rolls</h3>
+                                <ul id="p1RollCount"></ul>
+                            </div>
+                            <div class="scored">
+                                <h3>score</h3>
+                                <ul id="p1ScoreCount"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="p2Stats">
+                        <h2>p2</h2>
+                        <div class="loger">
+                            <div class="rolled">
+                                <h3>rolls</h3>
+                                <ul id="p2RollCount"></ul>
+                            </div>
+                            <div class="scored">
+                                <h3>score</h3>
+                                <ul id="p2ScoreCount"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+            
+        </section>
+
+
+
+        <form>
+            <section id="player2" class="player">
+                <div id="team2" class="squad">
+                    <h1>sas</h1>
+                </div>           
+                <div id="alias2" class="alias1">
+                    <p>harry</p>
+                </div>
+                <div id="diceValP2" class="diceValue">
+                </div>
+                <div id="btn" class="btnContainer">
+                    <button id="btnP2Roll" class="btnRoll">play</button>
+                    <button id="btnP2Hold" class="btnHold">hold</button>
+                </div>
+            </section>
+        </form>
+
+
     </section>
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/main.js"></script>
