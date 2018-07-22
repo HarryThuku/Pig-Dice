@@ -1,46 +1,175 @@
-// $().ready(function(){
-//     alert("tsup")
-// })
+// Business logic:
+
+// game over:
+function gameover(){
+    if((playerOneRolls === 6) && (playerTwoRolls === 6)){
+        $("#gconsole").hide(200);
+        $("#gameOver").show(500);
+    }
+};
+
+function winner(){
+    if(playerOneScore===playerTwoScore){
+        $("#result").text("The game ends with a tie. The winner is still undecided. There is alot of tension in the air, as the game has to be re-played.");
+    }
+    else if(playerOneScore<playerTwoScore){
+        $("#result").text("The SAS take the lead. The angry SRS promise to abort camp in six hours. Despite the agreement, the SAS maintains high guard, as the enemy is well known for its cunningness.");
+    }
+    else{
+        $("#result").text("The SRS take the lead. The SAS march away, though the SRS scout the skies fearing an enemy air to surface attack, as their possition has been discovered.");
+    }
+};
 
 
-var playerOneRolls=0;
-var playerTwoRolls=0;
+// Player1:
 var player1Name;
+var playerOneScore=0;
+var playerOneRolls=0;
+
+function counter1(){
+    if(playerOneRolls<=5){
+        $("#btnP2Roll").hide(200);
+        $("#btnP2Hold").hide(200);
+        $("#btnP1Hold").show(200);
+        commentP1();
+        playerOneRolls=playerOneRolls+1;
+        $("#p1RollCount").text(playerOneRolls);
+    }
+    else{
+        $("#btnP1Roll").hide();
+    }
+};
+function commentP1(){
+    if(playerOneRolls===1){
+        $("#comnConsole").text(">>"+player1Name+" says: retard.. i bet you'll roll a 1. treat the dice like a lady. it migth roll a 4!");
+    }
+    else if(playerOneRolls===2){
+        $("#comnConsole").text(">>"+player1Name+" says: did i tell you that your men's aim sucks. Next time you come to war, bring men worth our ability.");
+    }
+    else if(playerOneRolls===3){
+        $("#comnConsole").text(">>"+player1Name+" says: why am i having a feeling you'll loose..");
+    }
+    else if(playerOneRolls===4){
+        $("#comnConsole").text(">>"+player1Name+" says: beat me if you can you stupid jihad!!");
+    }
+    else if(playerOneRolls===5){
+        $("#comnConsole").text(">>"+player1Name+" says: there you go. it'd be a shame if you walked out of here the looser. like usual..");
+    }
+    else{
+        $("#comnConsole").text(">>"+player1Name+" says: Last chance.!");
+    }
+};
+
+function p1hold(){
+    $("#btnP1Roll").hide(200);
+        if(playerTwoRolls<=5){
+            $("#btnP2Roll").show(200);
+        }
+        else{
+            $("#btnP2Hold").show(200);            
+        }
+    $("#btnP1Hold").hide(200);
+    $("#comnConsole").text(">><<Game says: Dice passed to "+player2Name+". Your men are counting on you!");
+    gameover();
+    winner();
+};
+
+// player2:
 var player2Name;
+var playerTwoScore=0;
+var playerTwoRolls=0;
+function counter2(){
+    if(playerTwoRolls<=5){
+        $("#btnP1Roll").hide(200);
+        $("#btnP1Hold").hide(200);
+        $("#btnP2Hold").show(200);
+        commentP2();
+        playerTwoRolls=playerTwoRolls+1;
+        $("#p2RollCount").text(playerTwoRolls);
+    }
+    else{
+        $("#btnP2Roll").hide();
+    }
+};
+function commentP2(){
+    if(playerTwoRolls===1){
+        $("#comnConsole").text(">>"+player2Name+" says: you thought that was bad ass.. check this out you drunken shmirk");
+    }
+    else if(playerTwoRolls===2){
+        $("#comnConsole").text(">>"+player2Name+" says: why is it that you americans have fat hungry kids..");
+    }
+    else if(playerTwoRolls===3){
+        $("#comnConsole").text(">>"+player2Name+" says: i like how this is turning out. Maybe at the end when you get home youll miss me. dont come looking for me, ill shoot you");
+    }
+    else if(playerTwoRolls===4){
+        $("#comnConsole").text(">>"+player2Name+" says: you americans cant even play fair in a fair match. have you ever been told you have a loud mouth? shut up some times, you might gain some weight actually..");
+    }
+    else if(playerTwoRolls===5){
+        $("#comnConsole").text(">>"+player2Name+" says: at the end of this i'll have some whiskey. you are allowed to join me, i got some sea water for my guests. plus you can carry the whiskey bottle home when i'm done");
+    }
+    else{
+        $("#comnConsole").text(">>"+player2Name+" says: Whoaaaa!");
+    }
+};
+
+function p2hold(){
+    $("#btnP2Roll").hide(200);
+        if(playerOneRolls<=5){
+            $("#btnP1Roll").show(200);
+        }
+        else{
+            $("#btnP1Hold").show(200);
+        }
+        $("#btnP2Hold").hide(200);
+        $("#comnConsole").text(">><<Game says: Dice passed to "+player1Name+". Roll carefully!");
+        gameover();
+        winner();
+};
+
+
+function rematch(){
+    playerOneScore=0;
+    playerOneRolls=0;
+    playerTwoScore=0;
+    playerTwoRolls=0;
+    $("#p1RollCount").text(playerOneRolls);
+    $("#p2RollCount").text(playerTwoRolls);
+    $("#gameOver").hide(200);
+    $("#gconsole").show(300);
+    $("#btnP1Roll").show(200);
+    $("#btnP1Hold").hide(200);
+    $("#btnP2Roll").show(200);
+    $("#btnP2Hold").hide(200);
+};
+
+// User interface logic:
 
 $().ready(function(){
-
-
     $("#l1").click(function(event){
         event.preventDefault();
         $("#storyL1").hide(300);
         $("#storyP1").show(700);
-    })
-
+    });
     $("#l2").click(function(event){
         event.preventDefault();
         $("#storyP1").hide(300);
         $("#storyP2").show(700);
-    })
-
+    });
     $("#l3").click(function(event){
         event.preventDefault();
         $("#storyP2").hide(300);
         $("#storyP3").show(700);
-    })
-
+    });
     $("#l4").click(function(event){
         event.preventDefault();
         $("#storyP3").hide(300);
         $("#storyP4").show(700);
-    })
-
+    });
     $("#l5").click(function(event){
         event.preventDefault();
         $("#storyP4").hide(300);
         $("#a1").show(700);
-    })
-
+    });
     $("#l6").click(function(event){
         event.preventDefault();
         player1Name=$("#p1Alias").val();
@@ -53,8 +182,7 @@ $().ready(function(){
             $("#a2").show(700);
             $("#P1A").text(player1Name);
         }
-    })
-
+    });
     $("#l7").click(function(event){
         event.preventDefault();
         player2Name=$("#p2Alias").val();
@@ -67,41 +195,25 @@ $().ready(function(){
             $("#gconsole").show(700);
             $("#P2A").text(player2Name);
         }
-    })
-    
+    });
     $("#btnP1Roll").click(function(event){
         event.preventDefault();
-        $("#btnP2Roll").hide(200);
-        $("#btnP2Hold").hide(200);
-        $("#btnP1Hold").show(200);
-        $("#comnConsole").text("Player 1 says: beat me if you can you stupid jihad!!");
-        playerOneRolls=playerOneRolls+1;
-        $("#p1RollCount").text(playerOneRolls);
-    })
-
+        counter1();
+    });
     $("#btnP1Hold").click(function(event){
         event.preventDefault();
-        $("#btnP1Roll").hide(200);
-        $("#btnP2Roll").show(200);
-        $("#btnP1Hold").hide(200);
-        $("#comnConsole").text("Game says: Dice passed to player 2 :). Good Luck player 2.");
-    })
-
+        p1hold();
+    });
     $("#btnP2Roll").click(function(event){
         event.preventDefault();
-        $("#btnP1Roll").hide(200);
-        $("#btnP1Hold").hide(200);
-        $("#btnP2Hold").show(200);
-        $("#comnConsole").text("Player 2 says: you thought that was bad ass.. check this out you drunken shmirk");
-        playerTwoRolls=playerTwoRolls+1;
-        $("#p2RollCount").text(playerTwoRolls);
-    })
-
+        counter2();
+    });
     $("#btnP2Hold").click(function(event){
         event.preventDefault();
-        $("#btnP2Roll").hide(200);
-        $("#btnP1Roll").show(200);
-        $("#btnP2Hold").hide(200);
-        $("#comnConsole").text("Game says: Dice passed to player 1 :). Good Luck player 1.");
-    })
-})
+        p2hold();
+    });
+    $("#rematch").click(function(event){
+        event.preventDefault();
+        rematch();
+    });
+});
