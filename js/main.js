@@ -22,6 +22,24 @@ $().ready(function(){
         $("#storyP2").show(700);
     })
 
+    $("#l3").click(function(event){
+        event.preventDefault();
+        $("#storyP2").hide(300);
+        $("#storyP3").show(700);
+    })
+
+    $("#l4").click(function(event){
+        event.preventDefault();
+        $("#storyP3").hide(300);
+        $("#storyP4").show(700);
+    })
+
+    $("#l5").click(function(event){
+        event.preventDefault();
+        $("#storyP4").hide(300);
+        $("#gconsole").show(700);
+    })
+
 
 
 
