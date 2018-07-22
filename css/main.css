@@ -58,6 +58,10 @@ body{
     grid-template-columns: repeat(2, 1fr);
 }
 
+#storyP1,
+#storyP2,
+#storyP3,
+#storyP4,
 .btnHold{
     display: none;
 }

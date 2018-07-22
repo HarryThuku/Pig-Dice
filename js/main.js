@@ -9,6 +9,22 @@ var playerTwoRolls=0;
 
 $().ready(function(){
 
+
+    $("#l1").click(function(event){
+        event.preventDefault();
+        $("#storyL1").hide(300);
+        $("#storyP1").show(700);
+    })
+
+    $("#l2").click(function(event){
+        event.preventDefault();
+        $("#storyP1").hide(300);
+        $("#storyP2").show(700);
+    })
+
+
+
+
     $("#btnP1Roll").click(function(event){
         event.preventDefault();
         $("#btnP2Roll").hide(200);
