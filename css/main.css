@@ -237,3 +237,8 @@ body{
 .btnHold{
     display: none;
 }
+
+.diceValue img{
+    width: 150px;
+    height: auto;
+}
